@@ -8,17 +8,16 @@ namespace SalesWebMvc.Models
         [Required]
         [StringLength(80)]
         public string? Name { get; set; }
-<<<<<<< HEAD
-=======
+
         public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
 
         public Department()
         {
         }
 
-        public Department(int id, string? name)
+        public Department(string? name)
         {
-            Id = id;
+           
             Name = name;
         }
 
@@ -31,6 +30,5 @@ namespace SalesWebMvc.Models
         { 
             return Sellers.Sum(seller => seller.TotalSales(initial, final));
         }
->>>>>>> 05c9177 (Adding other entities and second migration)
     }
 }

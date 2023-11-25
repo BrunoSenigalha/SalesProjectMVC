@@ -10,6 +10,10 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Implementando injeção de dependência na aplicação da classe SeedingService
+// builder.Services.AddScoped<SeedingService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,5 +34,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+SeedingService.Seed(app);
 
 app.Run();

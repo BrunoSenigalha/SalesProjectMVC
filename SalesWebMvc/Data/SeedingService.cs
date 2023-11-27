@@ -46,7 +46,7 @@ namespace SalesWebMvc.Data
                 SalesRecord r8 = new SalesRecord(new DateTime(2018, 09, 11), 4000.0M, SaleStatus.Billed, s4);
                 SalesRecord r9 = new SalesRecord(new DateTime(2018, 09, 14), 11000.0M, SaleStatus.Pending, s6);
                 SalesRecord r10 = new SalesRecord(new DateTime(2018, 09, 7), 9000.0M, SaleStatus.Billed, s6);
-                SalesRecord r11 = new SalesRecord(  new DateTime(2018, 09, 13), 6000.0M, SaleStatus.Billed, s2);
+                SalesRecord r11 = new SalesRecord(new DateTime(2018, 09, 13), 6000.0M, SaleStatus.Billed, s2);
                 SalesRecord r12 = new SalesRecord(new DateTime(2018, 09, 25), 7000.0M, SaleStatus.Pending, s3);
                 SalesRecord r13 = new SalesRecord(new DateTime(2018, 09, 29), 10000.0M, SaleStatus.Billed, s4);
                 SalesRecord r14 = new SalesRecord(new DateTime(2018, 09, 4), 3000.0M, SaleStatus.Billed, s5);
@@ -79,7 +79,6 @@ namespace SalesWebMvc.Data
 
                 context.SaveChanges();
             }
-
         }
     }
 }

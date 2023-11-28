@@ -1,4 +1,6 @@
 ﻿using SalesWebMvc.Data;
+/*O DepartmentService tem como objetivo retornar uma lista do tipo Department
+ com a ordenação feita pelos nomes*/
 
 namespace SalesWebMvc.Models.Services
 {

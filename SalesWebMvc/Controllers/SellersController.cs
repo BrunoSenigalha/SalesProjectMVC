@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesWebMvc.Models;
 using SalesWebMvc.Models.Services;
+using SalesWebMvc.Models.ViewModels;
 
 namespace SalesWebMvc.Controllers
 {
-    public class SellersController(SellerService sellerService) : Controller
+    public class SellersController(SellerService sellerService, DepartmentService departmentService) : Controller
     {
         private readonly SellerService _sellerService = sellerService;
+        private readonly DepartmentService _departmentService = departmentService;
+        
         public IActionResult Index()
         {
             var list = _sellerService.FindAll();
@@ -15,10 +18,13 @@ namespace SalesWebMvc.Controllers
        
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Seller seller)
         {
             _sellerService.Insert(seller);
